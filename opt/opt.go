@@ -8,30 +8,35 @@ type Format string
 
 // Boolean flag types with constants
 type CanonicalFlag bool
+
 const (
 	Canonical   CanonicalFlag = true
 	NoCanonical CanonicalFlag = false
 )
 
 type OctalFlag bool
+
 const (
 	Octal   OctalFlag = true
 	NoOctal OctalFlag = false
 )
 
 type DecimalFlag bool
+
 const (
 	Decimal   DecimalFlag = true
 	NoDecimal DecimalFlag = false
 )
 
 type HexFlag bool
+
 const (
 	Hex   HexFlag = true
 	NoHex HexFlag = false
 )
 
 type UppercaseFlag bool
+
 const (
 	Uppercase   UppercaseFlag = true
 	NoUppercase UppercaseFlag = false
@@ -51,12 +56,12 @@ type Flags struct {
 }
 
 // Configure methods for the opt system
-func (b BytesPerLine) Configure(flags *Flags)   { flags.BytesPerLine = b }
-func (s SkipBytes) Configure(flags *Flags)      { flags.SkipBytes = s }
-func (r ReadBytes) Configure(flags *Flags)      { flags.ReadBytes = r }
-func (f Format) Configure(flags *Flags)         { flags.Format = f }
-func (c CanonicalFlag) Configure(flags *Flags)  { flags.Canonical = c }
-func (o OctalFlag) Configure(flags *Flags)      { flags.Octal = o }
-func (d DecimalFlag) Configure(flags *Flags)    { flags.Decimal = d }
-func (h HexFlag) Configure(flags *Flags)        { flags.Hex = h }
-func (u UppercaseFlag) Configure(flags *Flags)  { flags.Uppercase = u }
+func (b BytesPerLine) Configure(flags *Flags)  { flags.BytesPerLine = b }
+func (s SkipBytes) Configure(flags *Flags)     { flags.SkipBytes = s }
+func (r ReadBytes) Configure(flags *Flags)     { flags.ReadBytes = r }
+func (f Format) Configure(flags *Flags)        { flags.Format = f }
+func (c CanonicalFlag) Configure(flags *Flags) { flags.Canonical = c }
+func (o OctalFlag) Configure(flags *Flags)     { flags.Octal = o }
+func (d DecimalFlag) Configure(flags *Flags)   { flags.Decimal = d }
+func (h HexFlag) Configure(flags *Flags)       { flags.Hex = h }
+func (u UppercaseFlag) Configure(flags *Flags) { flags.Uppercase = u }
