@@ -5,20 +5,20 @@ import (
 	"fmt"
 	"io"
 
-	yup "github.com/gloo-foo/framework"
+	gloo "github.com/gloo-foo/framework"
 )
 
-type command yup.Inputs[yup.File, flags]
+type command gloo.Inputs[gloo.File, flags]
 
-func Hexdump(parameters ...any) yup.Command {
-	cmd := command(yup.Initialize[yup.File, flags](parameters...))
+func Hexdump(parameters ...any) gloo.Command {
+	cmd := command(gloo.Initialize[gloo.File, flags](parameters...))
 	if cmd.Flags.BytesPerLine == 0 {
 		cmd.Flags.BytesPerLine = 16
 	}
 	return cmd
 }
 
-func (p command) Executor() yup.CommandExecutor {
+func (p command) Executor() gloo.CommandExecutor {
 	return func(ctx context.Context, stdin io.Reader, stdout, stderr io.Writer) error {
 		bytesPerLine := int(p.Flags.BytesPerLine)
 		offset := 0
